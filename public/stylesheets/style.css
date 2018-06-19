@@ -70,3 +70,8 @@ a {
   align-items: center;
   justify-content: center;
 }
+
+
+#delete{
+  color : yellow;
+}

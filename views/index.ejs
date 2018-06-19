@@ -25,12 +25,33 @@
           <p>Ville
         <input id="search" name="ville" class="input-blue" type="text" placeholder="Lyon, Paris,...">
         <button type="submit" class="btn btn-warning" class="am-d" id="btn-Enregistrer">Enregistrer</button></p>
+
         </form>
       </div>
     </div>
 
     <div class="row">
     <div class="offset-xs-1 col-12">
+            <!--
+      <div id="map"></div>
+<script>
+  function initMap() {
+  var uluru = {lat: -25.363, lng: 131.044};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 4,
+    center: uluru
+  });
+  var marker = new google.maps.Marker({
+    position: uluru,
+    map: map
+  });
+}
+</script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0b9Kq1aUmgbtrwZF2KGaNHyx2r31TIlo&callback=initMap">
+</script>
+-->
+
       <img src="./images/map.png" height="200px" class="img-fluid" alt="Responsive image">
   </div>
   </div>
@@ -46,7 +67,7 @@
       <div class="col-1"><a id="tam" href="#" class="badge badge-warning"><%=cityList[i].Tmatin%></a></div>
       <div class="col-1"><a id="tpm" href="#" class="badge badge-secondary"><%=cityList[i].Tapmidi%></a></div>
 
-      <div class=" offset-md-3 col-1 text-right"> <a href="/​delete​-city?position=<%=i%>" class="btn" name="button"><img src="./images/delete.svg"></a></div>
+      <div class=" offset-md-3 col-1 text-right"> <a class="btn" name="button" href="/delete?type=<%=i%>"><img src="./images/delete.svg"></a></div>
 
     </div>
 

@@ -20,10 +20,12 @@
 
     <div class="row">
       <div class="offset-xs-1 col-4" id="header">
-      <form action="">
-        <p>Ville
-        <input id="search" class="input-blue" type="text" placeholder="Lyon, Paris,..." name="" value="">
-        <button type="button" class="btn btn-warning" class="am-d" id="btn-Enregistrer">Enregistrer</button></p>
+
+        <form action="/add-city" method="POST">
+          <p>Ville
+        <input id="search" name="ville" class="input-blue" type="text" placeholder="Lyon, Paris,...">
+        <button type="submit" class="btn btn-warning" class="am-d" id="btn-Enregistrer">Enregistrer</button></p>
+
         </form>
       </div>
     </div>
@@ -65,7 +67,7 @@
       <div class="col-1"><a id="tam" href="#" class="badge badge-warning"><%=cityList[i].Tmatin%></a></div>
       <div class="col-1"><a id="tpm" href="#" class="badge badge-secondary"><%=cityList[i].Tapmidi%></a></div>
 
-      <div class=" offset-md-3 col-1 text-right"> <a href="/​delete​-city?position=<%=i%>" class="btn" name="button"><img src="./images/delete.svg"></a></div>
+      <div class=" offset-md-3 col-1 text-right"> <a class="btn" name="button" href="/delete?type=<%=i%>"><img src="./images/delete.svg"></a></div>
 
     </div>
 

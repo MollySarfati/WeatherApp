@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+
 router.get('/', function(req, res, next) {
 
   req.session.cityList = [{
@@ -33,8 +34,6 @@ router.get('/', function(req, res, next) {
     }
   ];
 
-
-
   res.render('index', {cityList: req.session.cityList});
 });
 
@@ -60,9 +59,8 @@ router.post('/add-city', function(req, res, next) {
 
 
 router.get('/delete', function(req, res, next) {
-console.log(req.query.type);
-cityList.splice(req.query.type,1)
-  res.render('index',{cityList});
+  req.session.cityList.splice(req.query.type,1)
+res.render('index',{cityList: req.session.cityList});
 });
 
 

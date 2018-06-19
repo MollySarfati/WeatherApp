@@ -18,14 +18,12 @@
 
   <div class="container">
 
-
-
     <div class="row">
       <div class="offset-xs-1 col-4" id="header">
         <p>Ville
-        <form action="">
-        <input id="search" class="input-blue" type="text" placeholder="Lyon, Paris,..." name="" value="">
-        <button type="button" class="btn btn-warning" class="am-d" id="btn-Enregistrer">Enregistrer</button></p>
+        <form action="/add-city" method="POST">
+        <input id="search" name="ville" class="input-blue" type="text" placeholder="Lyon, Paris,...">
+        <button type="submit" class="btn btn-warning" class="am-d" id="btn-Enregistrer">Enregistrer</button>
         </form>
       </div>
     </div>
@@ -36,6 +34,8 @@
   </div>
   </div>
 
+
+
   <% for(var i=0; i<cityList.length; i++){ %>
 
     <div class="row" id="liste">
@@ -44,7 +44,7 @@
       <div class="col-1" id="info"><%=cityList[i].etat%></div>
       <div class="col-1"><a id="tam" href="#" class="badge badge-warning"><%=cityList[i].Tmatin%></a></div>
       <div class="col-1"><a id="tpm" href="#" class="badge badge-secondary"><%=cityList[i].Tapmidi%></a></div>
-      <div class="delete col-5"></div>
+      <div class="delete col-5">  <a href="#" class="btn" name="button"><img src="/images/delete.svg"></a></div>
     </div>
 
     <%}%>

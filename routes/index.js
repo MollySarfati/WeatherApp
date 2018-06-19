@@ -13,4 +13,11 @@ var cityList=[
   res.render('index',{cityList:cityList});
 });
 
+router.post('add-city', function(req, res, next) {
+
+
+  res.render('index',{});
+});
+
+
 module.exports = router;

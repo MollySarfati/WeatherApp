@@ -60,9 +60,9 @@ router.post('/add-city', function(req, res, next) {
       res.render('index', {cityList});
       });
 
-      router.get('/​delete​-city', function(req, res, next) {
+    router.get('/​delete​-city', function(req, res, next) {
         cityList.splice(req.query.position, 1);
-        res.render('index', {cityList});
+    res.render('index', {cityList});
       });
 
       module.exports = router;

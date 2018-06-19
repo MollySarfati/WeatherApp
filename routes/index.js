@@ -42,7 +42,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/add-city', function(req, res, next) {
 
-  var newRow = [{
+  req.session.newRow = [{
     ville: "",
     picto: "./images/picto-1.png",
     etat: "Pluie",
@@ -50,14 +50,15 @@ router.post('/add-city', function(req, res, next) {
     Tapmidi: "60°C"
   }];
 
-  newRow[0].ville = req.body.ville;
+  req.session.newRow[0].ville = req.body.ville;
 
   console.log(req.body.ville);
-
-  cityList = (cityList.concat(newRow));
-
-  res.render('index', {cityList});
+  req.session.cityList = (req.session.cityList.concat(req.session.newRow));
+  res.render('index', {cityList:req.session.cityList});
 });
+
+
+
 
 router.get('/delete', function(req, res, next) {
   req.session.cityList.splice(req.query.type,1)

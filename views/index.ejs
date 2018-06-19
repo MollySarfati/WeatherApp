@@ -3,14 +3,14 @@
 
 <head>
   <title>
-    <%= title %>
+    WeatherApp
   </title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
@@ -28,17 +28,22 @@
       </nav>
     </div>
 
+    <div class="row col-12">
+      <img id="image" src="images/map.png">
+    </div>
 
-    <img id="image" src="images/map.png" alt="">
+  <% for(var i=0; i<cityList.length; i++){ %>
 
     <div class="row" id="liste">
-      <div class="col-3" class="ville">Paris</div>
-      <div class="col-1"><img id="picto" src="/images/picto-1.png" alt=""></div>
-      <div class="col-1" id="info">Couvert</div>
-      <div class="col-1"><a id="tam" href="#" class="badge badge-warning">9°C</a></div>
-      <div class="col-1"><a id="tpm" href="#" class="badge badge-secondary">9°C</a></div>
+      <div class="col-3" class="ville"><%=cityList[i].ville%></div>
+      <div class="col-1"><img id="picto" src="<%=cityList[i].url%>" alt=""></div>
+      <div class="col-1" id="info"><%=cityList[i].etat%></div>
+      <div class="col-1"><a id="tam" href="#" class="badge badge-warning"><%=cityList[i].Tmatin%></a></div>
+      <div class="col-1"><a id="tpm" href="#" class="badge badge-secondary"><%=cityList[i].Tapmidi%></a></div>
       <div class="delete col-5"></div>
     </div>
+
+    <%}%>
 
   </div>
 

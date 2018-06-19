@@ -28,7 +28,9 @@ a {
 
 #image{
   margin-top: 20px;
+  background: cover;
 }
+
 
 #navigation{
   background: white;

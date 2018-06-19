@@ -14,10 +14,15 @@ router.get('/', function(req, res, next) {
   res.render('index',{cityList:cityList});
 });
 
-
 router.get('/​delete​-city', function(req, res, next) {
   cityList.splice(req.query.position, 1);
   res.render('index', { cityList});
 });
+
+router.post('add-city', function(req, res, next) {
+  res.render('index',{});
+});
+
+
 
 module.exports = router;

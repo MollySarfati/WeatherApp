@@ -3,14 +3,14 @@
 
 <head>
   <title>
-    WeatherApp
+    <%= title %>
   </title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
@@ -18,32 +18,34 @@
 
   <div class="container">
 
-    <div class="row" id="navigation">
-      <nav class="navbar navbar-light">
-        <a class="navbar-brand">Ville</a>
-        <form class="form-inline">
-          <input class="form-control mr-sm-2" type="search" placeholder="Lyon, Paris...">
-          <button class="btn btn-warning" type="submit">Enregistrer</button>
-        </form>
-      </nav>
+
+
+    <div class="row">
+      <div class="offset-xs-1 col-4" id="header">
+        <p>Ville
+        <input id="search" class="input-blue" type="text" placeholder="Lyon, Paris,..." name="" value="">
+        <button type="button" class="btn btn-warning" class="am-d" id="btn-Enregistrer">Enregistrer</button></p>
+
+      </div>
     </div>
 
-    <div class="row col-12">
-      <img id="image" src="images/map.png">
-    </div>
-
-  <% for(var i=0; i<cityList.length; i++){ %>
+    <div class="row">
+    <div class="offset-xs-1 col-12">
+      <img src="./images/map.png" height="200px" class="img-fluid" alt="Responsive image">
+  </div>
+  </div>
 
     <div class="row" id="liste">
-      <div class="col-3" class="ville"><%=cityList[i].ville%></div>
-      <div class="col-1"><img id="picto" src="<%=cityList[i].url%>" alt=""></div>
-      <div class="col-1" id="info"><%=cityList[i].etat%></div>
-      <div class="col-1"><a id="tam" href="#" class="badge badge-warning"><%=cityList[i].Tmatin%></a></div>
-      <div class="col-1"><a id="tpm" href="#" class="badge badge-secondary"><%=cityList[i].Tapmidi%></a></div>
-      <div class="delete col-5"></div>
+      <div class="col-1" class="ville">Paris</div>
+      <div class="offset-md-3 col-1"><img id="picto" src="/images/picto-1.png" alt=""></div>
+      <div class="col-1 " id="info">Couvert</div>
+      <div class="col-1 "><a id="tam" href="#" class="badge badge-warning">9°C</a></div>
+      <div class="col-1 "><a id="tpm" href="#" class="badge badge-secondary">9°C</a></div>
+      <div class=" offset-md-3 col-1 text-right"><i class="far fa-times-circle"></i>
+</div>
     </div>
 
-    <%}%>
+
 
   </div>
 

@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
@@ -30,27 +30,39 @@
     </div>
 
     <div class="row">
-    <div class="offset-xs-1 col-12">
-      <img src="./images/map.png" height="200px" class="img-fluid" alt="Responsive image">
-  </div>
-  </div>
-
-
-
-  <% for(var i=0; i<cityList.length; i++){ %>
-
-    <div class="row" id="liste">
-      <div class="col-3" class="ville"><%=cityList[i].ville%></div>
-      <div class="col-1"><img id="picto" src="<%=cityList[i].picto%>" alt=""></div>
-      <div class="col-1" id="info"><%=cityList[i].etat%></div>
-      <div class="col-1"><a id="tam" class="badge badge-warning"><%=cityList[i].Tmatin%></a></div>
-      <div class="col-1"><a id="tpm" class="badge badge-secondary"><%=cityList[i].Tapmidi%></a></div>
-
-      <div class=" offset-md-3 col-1 text-right"> <a class="btn" name="button" href="/delete?type=<%=i%>"><img id="delete" src="./images/delete.svg"></a></div>
-
+      <div class="col-12">
+        <img src="./images/map.png" height="200px" class="img-fluid" alt="Responsive image">
+      </div>
     </div>
 
-    <%}%>
+
+
+    <% for(var i=0; i<cityList.length; i++){ %>
+
+      <div class="row" id="liste">
+        <div class="col-3" class="ville">
+          <%=cityList[i].ville%>
+        </div>
+        <div class="col-1"><img id="picto" src="<%=cityList[i].picto%>" alt=""></div>
+        <div class="col-1" id="info">
+          <%=cityList[i].etat%>
+        </div>
+        <div class="col-1">
+          <a id="tam" class="badge badge-warning">
+            <%=cityList[i].Tmatin%>
+          </a>
+        </div>
+        <div class="col-1">
+          <a id="tpm" class="badge badge-secondary">
+            <%=cityList[i].Tapmidi%>
+          </a>
+        </div>
+
+        <div class="offset-3 col-1"> <a class="btn" name="button" href="/delete?type=<%=i%>"><img id="delete" src="./images/delete.svg"></a></div>
+
+      </div>
+
+      <%}%>
 
 
 

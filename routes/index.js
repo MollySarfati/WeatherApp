@@ -3,12 +3,11 @@ var router = express.Router();
 var request = require('request'); // module request pour l api
 
 // Open weather Map
-
 const OpenWeatherMapHelper = require("openweathermap-node");
 
 const helper = new OpenWeatherMapHelper(
     {
-        APPID: '00e1c46c4bde51092444a35dd497d5f9',
+        APPID: 'KEYS',
         units: "metric"
     }
 );
@@ -34,9 +33,10 @@ router.get('/', function(req, res, next) {
 
 });
 */
+
 var search = "http://api.openweathermap.org/data/2.5/weather?q=";
 search += req.body.ville;
-search += "&APPID=00e1c46c4bde51092444a35dd497d5f9";
+search += "&APPID=KEYS";
 request(search, function(error, response, body) {
 
 body = JSON.parse(body);

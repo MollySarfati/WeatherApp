@@ -94,3 +94,7 @@ p{
 #delete{
   color : yellow;
 }
+
+form {
+  margin-bottom: 15px;
+}

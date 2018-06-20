@@ -7,6 +7,9 @@ a {
   color: white;
 }
 
+p{
+  font-weight: bold;
+}
 
 .container{
   border-type: solid, 2px, black;
@@ -26,6 +29,12 @@ a {
   font-weight: bold;
 }
 
+#search{
+  height: 41px;
+  width: 600px;
+  width: 25vw;
+  border-radius: 5px;
+}
 
 #navigation{
   background: white;
@@ -45,10 +54,14 @@ a {
   align-items: center;
   height: 6vh;
   vertical-align: middle;
+  max-width: 100%;
+	height: auto;
+
 }
 
 #tam{
   font-size: 15px;
+  font-size: 1vw;
   width: 50px;
   height: 25px;
   text : center;
@@ -57,11 +70,15 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 100%;
+	height: auto;
 }
 
 
 #tpm{
   font-size: 15px;
+  font-size: 1vw;
+  color: white;
   width: 50px;
   height: 25px;
   text : center;
@@ -69,6 +86,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 100%;
+	height: auto;
 }
 
 

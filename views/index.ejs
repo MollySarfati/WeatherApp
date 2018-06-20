@@ -22,7 +22,7 @@
       <div class="col-12" id="header">
         <form action="/add-city" method="POST">
           <label>Ville </label>
-        <input id="search" name="ville" class="input-blue" type="text" placeholder="Lyon, Paris,...">
+        <input id="search" name="name" class="input-blue" type="text" placeholder="Lyon, Paris,...">
         <button type="submit" class="btn btn-warning" class="am-d" id="btn-Enregistrer">Enregistrer</button>
 
         </form>
@@ -41,7 +41,7 @@
 
       <div class="row" id="liste">
         <div class="col-3" class="ville">
-          <%=cityList[i].ville%>
+          <%=cityList[i].name%>
         </div>
         <div class="col-1"><img id="picto" src="<%=cityList[i].picto%>" alt=""></div>
         <div class="col-1" id="info">

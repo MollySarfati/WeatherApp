@@ -18,7 +18,7 @@ a {
 }
 
 .btn-warning{
-  height: 45px;
+  height: 35px;
   color: white;
 }
 
@@ -26,6 +26,9 @@ a {
   font-weight: bold;
 }
 
+#header {
+  margin-bottom: 10px;
+}
 
 #navigation{
   background: white;

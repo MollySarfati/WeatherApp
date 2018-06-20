@@ -13,6 +13,7 @@
     "express-session": "^1.15.6",
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
-    "openweathermap-node": "^1.1.2"
+    "openweathermap-node": "^1.1.2",
+    "request": "^2.87.0"
   }
 }

@@ -1,43 +1,53 @@
 var express = require('express');
 var router = express.Router();
+var request = require('request'); // module request pour l api
 
+// Open weather Map
+
+const OpenWeatherMapHelper = require("openweathermap-node");
+
+const helper = new OpenWeatherMapHelper(
+    {
+        APPID: '00e1c46c4bde51092444a35dd497d5f9',
+        units: "metric"
+    }
+);
+
+//fin Open weather Map
 
 
 
 router.get('/', function(req, res, next) {
 
-  req.session.cityList = [{
-      ville: "Paris",
-      picto: "./images/picto-1.png",
-      etat: "Couvert",
-      Tmatin: "9°C",
-      Tapmidi: "10°C"
-    },
-    {
-      ville: "Marseille",
-      picto: "./images/picto-1.png",
-      etat: "Couvert",
-      Tmatin: "10°C",
-      Tapmidi: "1°C"
-    },
-    {
-      ville: "Lyon",
-      picto: "./images/picto-1.png",
-      etat: "bruine légère",
-      Tmatin: "6°C",
-      Tapmidi: "3°C"
-    },
-    {
-      ville: "Lille",
-      picto: "./images/picto-1.png",
-      etat: "Couvert",
-      Tmatin: "10°C",
-      Tapmidi: "10°C"
-    }
+    req.session.cityList = [
+      {ville: "Paris", picto: "./images/picto-1.png",etat: "Couvert",Tmatin: "9°C",Tapmidi: "10°C"},
+      {ville: "Marseille",picto: "./images/picto-1.png",etat: "Couvert",Tmatin: "10°C",Tapmidi: "1°C"},
+      {ville: "Lyon", picto: "./images/picto-1.png", etat: "bruine légère", Tmatin: "6°C", Tapmidi: "3°C"},
+      {ville: "Lille", picto: "./images/picto-1.png", etat: "Couvert", Tmatin: "10°C", Tapmidi: "10°C"}
   ];
 
-  res.render('index', {cityList: req.session.cityList});
+/*
+  request("https://jsonplaceholder.typicode.com/users", function(error, response, body) {
+
+  body = JSON.parse(body);
+  console.log(body[2].name);
+
 });
+*/
+var search = "http://api.openweathermap.org/data/2.5/weather?q=";
+search += req.body.ville;
+search += "&APPID=00e1c46c4bde51092444a35dd497d5f9";
+request(search, function(error, response, body) {
+
+body = JSON.parse(body);
+console.log(body);
+
+res.render('index', {cityList: req.session.cityList });
+
+});
+
+});
+
 
 
 router.post('/add-city', function(req, res, next) {
@@ -54,6 +64,11 @@ router.post('/add-city', function(req, res, next) {
 
   console.log(req.body.ville);
   req.session.cityList = (req.session.cityList.concat(req.session.newRow));
+
+  /*  OU BIEN
+  cityList.push({name: req.body.name, picto1:"/images/picto-1.png", picto2:"/images/picto-1.png",picto3:"/images/picto-1.png",picto4:"/images/picto-1.png"})
+*/
+
   res.render('index', {cityList:req.session.cityList});
 });
 

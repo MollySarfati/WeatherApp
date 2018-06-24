@@ -8,10 +8,20 @@ a {
 }
 
 .btn-warning {
-    color: #FFFFFF;
+  color: #FFFFFF;
 }
 
 .fa-times-circle-o {
-  font-size:16px;
-  color:#DFA726;
+  font-size:22px;
+  color:#FDC02F;
 }
+
+
+.badge-warning {
+  color: #FFFFFF;
+}
+
+#map {
+  height: 400px;  
+  width: 100%;
+ }

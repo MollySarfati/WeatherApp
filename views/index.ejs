@@ -1,51 +1,77 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title></title>
-    <script src="https://use.fontawesome.com/a7ec7986bf.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
 
-  <body>
+<head>
+  <title></title>
+  <script src="https://use.fontawesome.com/a7ec7986bf.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
 
-    <div class="container">
-      <div class="row">
+  <script src="/javascripts/script.js"></script>
 
-        <div class="offset-2 col-8">
-          <form action="/add-city" method="POST" class="form-inline">
-            <div class="form-group mx-sm-3 mb-2">
-              <span for="city">Ville</span>
-              <input type="text" class="form-control" name="cityv2" id="city" placeholder="Paris, Lyon ..">
-            </div>
-            <button type="submit" class="btn btn-warning mb-2">Enregistrer</button>
-          </form>
-        </div>
+</head>
 
-        <div class="offset-2 col-8">
-          <ul class="list-group">
-            <%
+<body>
+
+  <div class="container">
+    <div class="row">
+
+      <div class="offset-2 col-8">
+        <form action="/add-city" method="POST" class="form-inline">
+          <div class="form-group mx-sm-3 mb-2">
+            <span for="city">Ville</span>
+            <input type="text" class="form-control" name="city" id="city" placeholder="Paris, Lyon ..">
+          </div>
+          <button type="submit" class="btn btn-warning mb-2">Enregistrer</button>
+        </form>
+      </div>
+
+<!-- google map -->
+      <!--The div element for the map -->
+      <div id="map"></div>
+
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key={KEY}-qagtdp_OOk&callback=initMap">
+      </script>
+
+<!-- fin google map  (voir script.js)-->
+
+      <div class="col-12" id="listeVille">
+        <ul class="list-group">
+          <%
             for(var i=0; i<cityList.length; i++) {
             %>
-              <li class="list-group-item">
-                <div class="row">
-                  <div class="col-3">
-                    <%=cityList[i].name%>
-                  </div>
-                  <div class="offset-8 col-1">
-                    <a href="/delete-city?position=<%=i%>"><i class="fa fa-times-circle-o" aria-hidden="true"></i></a>
-                  </div>
+            <li class="list-group-item" data-lat="<%=cityList[i].latitude%>" data-lon="<%=cityList[i].longitude%>">
+              <div class="row">
+                <div class="col-2 city-name">
+                  <%=cityList[i].name%>
                 </div>
-              </li>
+
+
+
+                    <div class="offset-2 col-6 liste" data-lat="<%=cityList[i].lat%>" data-lon="<%=cityList[i].lon%>">
+                    <img src="<%=cityList[i].icon%>">
+                    <%=cityList[i].description%> <span class="badge badge-warning"><%=cityList[i].max%></span> <span class="badge badge-secondary"><%=cityList[i].min%></span>
+                  </div>
+
+                <div class="offset-1 col-1 city-delete">
+                  <a href="/delete-city?position=<%=cityList[i]._id%>">
+                    <i class="fa fa-times-circle-o" aria-hidden="true"></i></a>
+                </div>
+
+
+              </div>
+            </li>
             <%
             }
             %>
-          </ul>
-        </div>
-
+        </ul>
       </div>
-    </div>
 
-  </body>
+    </div>
+  </div>
+
+</body>
+
 </html>

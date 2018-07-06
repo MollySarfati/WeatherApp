@@ -55,8 +55,8 @@ router.get('/delete-city', function(req, res, next) {
     { _id: req.query.position},
     function(error) {
 
-      cityModel.find(function(err, city) { 
-        console.log(city); 
+      cityModel.find(function(err, city) {
+        console.log(city);
         res.render('index', {cityList: city});
       });
     });

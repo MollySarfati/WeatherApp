@@ -5,7 +5,11 @@
  */
 
 var app = require('../app');
+<<<<<<< HEAD
 var debug = require('debug')('myapp:server');
+=======
+var debug = require('debug')('weatherapp:server');
+>>>>>>> c64309f49df64403925de6684e42d373b493e92e
 var http = require('http');
 
 /**

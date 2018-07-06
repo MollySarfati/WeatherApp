@@ -4,6 +4,7 @@ body {
 }
 
 a {
+<<<<<<< HEAD
   color: #00B7FF;
 }
 
@@ -25,3 +26,99 @@ a {
   height: 400px;  
   width: 100%;
  }
+=======
+  color: white;
+}
+
+p{
+  font-weight: bold;
+}
+
+.container{
+  border-type: solid, 2px, black;
+}
+
+.form-control{
+  height: 45px;
+  width: : 600px;
+}
+
+.btn-warning{
+  height: 35px;
+  color: white;
+}
+
+.navbar-brand{
+  font-weight: bold;
+}
+
+#search{
+  height: 41px;
+  width: 600px;
+  width: 25vw;
+  border-radius: 5px;
+}
+
+#navigation{
+  background: white;
+  height: 100px;
+}
+
+#liste{
+    border: 1px solid #545B62;
+    height: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    align-items: center;
+}
+
+#picto{
+  align-items: center;
+  height: 6vh;
+  vertical-align: middle;
+  max-width: 100%;
+	height: auto;
+
+}
+
+#tam{
+  font-size: 15px;
+  font-size: 1vw;
+  width: 50px;
+  height: 25px;
+  text : center;
+  color: white;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+	height: auto;
+}
+
+
+#tpm{
+  font-size: 15px;
+  font-size: 1vw;
+  color: white;
+  width: 50px;
+  height: 25px;
+  text : center;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+	height: auto;
+}
+
+
+#delete{
+  color : yellow;
+}
+
+form {
+  margin-bottom: 15px;
+}
+>>>>>>> c64309f49df64403925de6684e42d373b493e92e

@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "myapp",
   "version": "0.0.0",
   "private": true,
@@ -15,5 +16,23 @@
     "morgan": "~1.9.0",
     "request": "^2.87.0",
     "serve-favicon": "~2.4.5"
+=======
+  "name": "weatherapp",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.16.0",
+    "express-session": "^1.15.6",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0",
+    "openweathermap-node": "^1.1.2",
+    "request": "^2.87.0"
+>>>>>>> c64309f49df64403925de6684e42d373b493e92e
   }
 }
